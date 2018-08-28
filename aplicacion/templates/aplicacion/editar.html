@@ -1,0 +1,10 @@
+{% extends 'aplicacion/plantilla.html' %}
+{% load staticfiles %}
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Actualizar</button>
+		<button type="submit" formaction="{% url 'eliminar' pk=detalle.pk %}" formmethod="POST">Borrar</button>
+	</form>
+{% endblock %}

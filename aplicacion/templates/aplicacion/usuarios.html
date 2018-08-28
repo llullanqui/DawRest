@@ -1,0 +1,29 @@
+{% extends 'aplicacion/plantilla.html' %}
+{% load staticfiles %}
+{% block content %}
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>Nombre</th>
+				<th>Servicios</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for usuario in usuarios %}
+			<tr>
+				<td>{{usuario.id}}</td>
+				<td>{{usuario}}</td>
+				<td><a href="{% url 'servicios' pk=usuario.id %}">Ver servicios</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		<th></th>
+	</table>
+	<h3>Añadir servicios a usuario</h3>
+	<form method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+		<button type="submit">Enviar</button>
+	</form>
+{% endblock %}

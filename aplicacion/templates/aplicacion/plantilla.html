@@ -1,0 +1,32 @@
+ {% load staticfiles %}
+ <!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="quejas,sociales,quejas sociales,">
+		<title>TODOS MIS SERVICIOS</title>
+	</head>
+	<body>
+		<!-- Encabezado de todas las paginas -->
+		<header>
+			<a href="{% url 'index' %}"><h1>TODOS MIS SERVICIOS</h1></a>
+			{%block header%}
+			{%endblock%}
+		</header>
+
+		{%block content%}
+		{%endblock%}	
+		
+		<!-- Pie de pagina en todas las paginas -->
+		<footer>
+			<div>
+				<h3>Escuela Superior Politécnica del Litoral - Guayaquil - Ecuador</h3>
+				<p>El contenido de esta obra es de propiedad intelectual de la ESPOL y de los estudiantes que la realizaron. Todos los derechos reservados. Prohibida su reproducción total o parcial, comunicación
+				pública o distribución sin autorización previa del titular de los derecho. &#xA9; </p>
+			</div>
+		</footer>
+	
+	</body>
+
+</html>

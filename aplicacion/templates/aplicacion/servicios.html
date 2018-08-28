@@ -1,0 +1,26 @@
+{% extends 'aplicacion/plantilla.html' %}
+{% load staticfiles %}
+{% block content %}
+	<h3>{{usuario}}</h3>
+	<table>
+		<thead>
+			<tr>
+				<th>id</th>
+				<th>Servicio</th>
+				<th>Ciudad del servicio</th>
+				<th>Editar</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for item in servicios %}
+			<tr>
+				<td>{{item.id}}</td>
+				<td>{{item.servicio}}</td>
+				<td>{{item.ciudad}}</td>
+				<td><a href="{% url 'editar' pk=item.id %}">Editar servicio</a></td>
+			</tr>
+			{% endfor %}
+		</tbody>
+		<th></th>
+	</table>
+{% endblock %}
